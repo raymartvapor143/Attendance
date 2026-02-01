@@ -316,7 +316,7 @@
       <main class="flex-1 py-12 px-4">
         <div class="max-w-2xl mx-auto">
           <div class="slide-up glass-morphism rounded-3xl p-8 shadow-2xl">
-            <form id="attendanceForm" action="{{ route('attendance.store') }}" method="POST">
+            <form id="attendanceForm" action="{{ url('/attendance/store') }}" method="POST">
             @csrf
               <input type="hidden" name="photo" id="photo_input">
               <input type="hidden" name="type_attendee" id="type_attendee_input">
