@@ -756,7 +756,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Swal.fire({
         icon: 'error',
         title: 'Error!',
-        text: err.message,
+        text: err.message, 
       });
     } finally {
       submitText.classList.remove('hidden');
