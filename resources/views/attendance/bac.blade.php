@@ -699,8 +699,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // --- Fetch CSRF token from meta tag ---
       const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+      // --- Force HTTPS for fetch ---
+      const actionUrl = new URL(form.getAttribute('action'), window.location.origin).href;
+
       // --- Send POST request ---
-      const response = await fetch(form.getAttribute('action'), {
+      const response = await fetch(actionUrl, {
         method: 'POST',
         body: formData,
         headers: {
