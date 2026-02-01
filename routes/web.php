@@ -10,5 +10,6 @@ Route::get('/', function () {
 });
 
 
-Route::post('/attendance', [AttendanceController::class, 'store']);
+Route::post('/attendance', [AttendanceController::class, 'store'])
+    ->name('attendance.store');
 
