@@ -10,7 +10,4 @@ Route::get('/', function () {
 });
 
 
-
-Route::post('/attendance', [AttendanceController::class, 'store'])
-    ->name('attendance.store')
-    ->middleware('web'); // Keep web middleware if using CSRF
+Route::post('/attendance', [AttendanceController::class, 'store']);
