@@ -463,6 +463,10 @@
                   </div>
                 </div>
               </div>
+
+
+              <br>
+
               <button type="submit" class="enhanced-button w-full py-5 text-white text-xl font-bold rounded-2xl whitespace-nowrap relative overflow-hidden">
                 <div id="submitText" class="flex items-center justify-center space-x-3 relative z-10">
                   <div class="w-6 h-6 flex items-center justify-center">
@@ -756,7 +760,11 @@ document.addEventListener('DOMContentLoaded', function() {
       Swal.fire({
         icon: 'error',
         title: 'Error!',
-        text: err.message, 
+
+        text: err.message,
+
+        text: err.message,
+
       });
     } finally {
       submitText.classList.remove('hidden');
@@ -765,7 +773,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
- 
+
+
+
+
 
 
 

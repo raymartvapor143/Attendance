@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attendee;
+
 use App\Models\Attendance;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -12,11 +13,6 @@ use Illuminate\Support\Facades\Validator;
 
 class AttendanceController extends Controller
 {
-    public function attendance()
-    {
-        return view('attendance.bac');
-    }
-
 
  public function store(Request $request)
 {
@@ -96,5 +92,19 @@ class AttendanceController extends Controller
     }
 }
 
+
+
+public function bac()
+{
+    // Get the BAC attendance row
+    $attendance = \App\Models\Attendance::where('unit', 'bac')->first();
+
+    // Only allow access if controller_id = 1 (active)
+    if (!$attendance || $attendance->controller_id != 1) {
+        return response()->view('attendance.disabled', [], 403);
+    }
+
+    return view('attendance.bac');
+}
 
 }

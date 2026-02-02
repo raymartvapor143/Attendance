@@ -9,7 +9,12 @@ return new class extends Migration {
     {
         Schema::create('controllers', function (Blueprint $table) {
             $table->id();
+
             $table->boolean('status')->default(true); // true = active, false = inactive
+
+            $table->string('status')->default('active');
+            // allowed values: active, disabled
+
             $table->timestamps();
         });
     }
